@@ -2,6 +2,10 @@
 
 A 6-DOF serial robotic manipulator designed from scratch for simulation, motion planning, control, and future hardware implementation.
 
+<p align="center">
+    <img src="images/CAD.png">
+</p>
+
 ## Repository Structure
 
 ```text
