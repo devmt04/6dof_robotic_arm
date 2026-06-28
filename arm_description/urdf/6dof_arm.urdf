@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<robot name="arm">
+
+    <material name="graphite">
+        <color rgba="0.18 0.18 0.18 1.0"/>
+    </material>
+
+    <material name="aluminum">
+        <color rgba="0.48 0.48 0.48 1.0"/>
+    </material>
+
+    <link name="base">
+        <inertial>
+            <origin xyz="0 0 0.034434" rpy="0 0 0"/>
+            <mass value="1.5"/>
+            <inertia
+                ixx="0.004283729"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.004283647"
+                iyz="0.0"
+                izz="0.007371875"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/Base.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="graphite"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/Base.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+
+        
+    <!-- <collision>
+        <origin xyz="0 0 0.035" rpy="0 0 0"/>
+        <geometry>
+            <cylinder radius="0.10" length="0.07"/>
+        </geometry>
+    </collision> -->
+
+    </link>
+
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0 0 0.029578" rpy="0 0 0"/>
+            <mass value="1.5"/>
+            <inertia
+                ixx="0.00296583"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.00296577"
+                iyz="0.0"
+                izz="0.00485270"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -0.07" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/Base_Joint.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="aluminum"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -0.07" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/Base_Joint.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+
+        <!-- <collision>
+            <origin xyz="0 0 0.035" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.09" length="0.07"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <link name="link_1">
+        <inertial>
+            <origin xyz="0.019577 0 0.079161" rpy="0 0 0"/>
+            <mass value="1.0"/>
+            <inertia
+                ixx="0.00221515"
+                ixy="0.0"
+                ixz="-0.00021216"
+                iyy="0.00310288"
+                iyz="0.0"
+                izz="0.00218821"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="0 0 -0.140" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="aluminum"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 -0.140" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+
+        <!-- Shoulder -->
+        <!-- <collision>
+            <origin xyz="0 0 0.075" rpy="0 1.57079632679 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.10"/>
+            </geometry>
+        </collision> -->
+
+        <!-- Arm -->
+        <!-- <collision>
+            <origin xyz="0.05 0 0.075" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.15"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <link name="link_2">
+        <inertial>
+            <origin xyz="0.108942 0 0.065777" rpy="0 0 0"/>
+            <mass value="1.0"/>
+            <inertia
+                ixx="0.00206512"
+                ixy="0.0"
+                ixz="-0.00048954"
+                iyy="0.00441906"
+                iyz="0.0"
+                izz="0.00364423"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="-0.100 0 -0.230" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="aluminum"/>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.100 0 -0.230" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <!-- Horizontal arm -->
+        <!-- <collision>
+            <origin xyz="0.100 0 0.075" rpy="0 1.57079632679 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.20"/>
+            </geometry>
+        </collision> -->
+
+        <!-- Joint housing -->
+        <!-- <collision>
+            <origin xyz="0 0 0.075" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.15"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <link name="link_3">
+        <inertial>
+            <origin xyz="0.069576 0 0.079160" rpy="0 0 0"/>
+            <mass value="1.0"/>
+            <inertia
+                ixx="0.00221521"
+                ixy="0.0"
+                ixz="-0.00021215"
+                iyy="0.00310314"
+                iyz="0.0"
+                izz="0.00218845"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="-0.240 0 -0.330" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT3.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="aluminum"/>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.240 0 -0.330" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT3.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+
+        <!-- Vertical joint housing -->
+        <!-- <collision>
+            <origin xyz="0 0 0.075" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.15"/>
+            </geometry>
+        </collision> -->
+
+        <!-- Horizontal arm -->
+        <!-- <collision>
+            <origin xyz="0.075 0 0.075" rpy="0 1.57079632679 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.15"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <link name="link_4">
+        <inertial>
+            <origin xyz="0.080453 0 0.195867" rpy="0 0 0"/>
+            <mass value="1.0"/>
+            <inertia
+                ixx="0.00903418"
+                ixy="0.0"
+                ixz="-0.00027018"
+                iyy="0.00968988"
+                iyz="0.0"
+                izz="0.00193348"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="-0.340 0 -0.420" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT4.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="aluminum"/>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.340 0 -0.420" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT4.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <!-- <collision>
+            <origin xyz="0.075 0 0.170" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.34"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <link name="link_5">
+        <inertial>
+            <origin xyz="-0.061801 0 0.084534" rpy="0 0 0"/>
+            <mass value="0.6"/>
+            <inertia
+                ixx="0.00183933"
+                ixy="0.0"
+                ixz="0.00009839"
+                iyy="0.00211001"
+                iyz="0.0"
+                izz="0.00104943"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="-0.320 0 -0.650" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT5.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="aluminum"/>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.320 0 -0.650" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT5.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+        <!-- <collision>
+            <origin xyz="0.065 0 0.090" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.18"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <link name="link_6">
+        <inertial>
+            <origin xyz="-0.095466 0 0.069956" rpy="0 0 0"/>
+            <mass value="0.6"/>
+            <inertia
+                ixx="0.00106231"
+                ixy="0.0"
+                ixz="0.00015242"
+                iyy="0.00212277"
+                iyz="0.0"
+                izz="0.00183934"/>
+        </inertial>
+
+        <visual>
+            <origin xyz="-0.247055 0 -0.780" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT6.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="aluminum"/>
+        </visual>
+
+        <collision>
+            <origin xyz="-0.247055 0 -0.780" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://arm_description/meshes/JOINT6.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+
+        <!-- <collision>
+            <origin xyz="0.090 0 0.065" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.13"/>
+            </geometry>
+        </collision> -->
+    </link>
+
+    <!-- Joints -->
+    <joint name="base_joint" type="revolute">
+        <origin xyz="0 0 0.07" rpy="0 0 0"/>
+        <parent link="base"/>
+        <child link="base_link"/>
+        <axis xyz="0 0 1"/>
+        <limit
+            lower="-3.14159265359"
+            upper="3.14159265359"
+            effort="50"
+            velocity="2.0"/>
+    </joint>
+
+    <joint name="base_link1_joint" type="fixed">
+        <origin xyz="0 0 0.07" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="link_1"/>
+    </joint>
+
+    <joint name="link1_link2_joint" type="revolute">
+        <origin xyz="0.100 0 0.090" rpy="0 0 0"/>
+        <parent link="link_1"/>
+        <child link="link_2"/>
+        <axis xyz="1 0 0"/>
+        <limit
+            lower="-3.14159265359"
+            upper="3.14159265359"
+            effort="50"
+            velocity="2.0"/>
+    </joint>
+
+    <joint name="link2_link3_joint" type="revolute">
+        <origin xyz="0.140 0 0.100" rpy="0 0 0"/>
+        <parent link="link_2"/>
+        <child link="link_3"/>
+        <axis xyz="0 0 1"/>
+        <limit
+            lower="-3.14159265359"
+            upper="3.14159265359"
+            effort="50"
+            velocity="2.0"/>
+    </joint>
+
+    <joint name="link3_link4_joint" type="revolute">
+        <origin xyz="0.100 0 0.090" rpy="0 0 0"/>
+        <parent link="link_3"/>
+        <child link="link_4"/>
+        <axis xyz="1 0 0"/>
+        <limit
+            lower="-3.14159265359"
+            upper="3.14159265359"
+            effort="50"
+            velocity="2.0"/>
+    </joint>
+
+    <joint name="link4_link5_joint" type="revolute">
+        <origin xyz="-0.020 0 0.230" rpy="0 0 0"/>
+        <parent link="link_4"/>
+        <child link="link_5"/>
+        <axis xyz="1 0 0"/>
+        <limit
+            lower="-3.14159265359"
+            upper="3.14159265359"
+            effort="50"
+            velocity="2.0"/>
+    </joint>
+
+    <joint name="link5_link6_joint" type="revolute">
+        <origin xyz="-0.07295 0 0.130" rpy="0 0 0"/>
+        <parent link="link_5"/>
+        <child link="link_6"/>
+        <axis xyz="0 0 1"/>
+        <limit
+            lower="-3.14159265359"
+            upper="3.14159265359"
+            effort="50"
+            velocity="2.0"/>
+    </joint>
+</robot>
